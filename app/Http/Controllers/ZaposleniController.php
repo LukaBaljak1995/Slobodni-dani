@@ -31,7 +31,14 @@ class ZaposleniController extends Controller{
         $cZahtevZaOdmor->DatumDo = $sDatumDo;
         $cZahtevZaOdmor->save();
 
-        dd($cZahtevZaOdmor);
+        // dd($cZahtevZaOdmor);
+        // $aZahteviKorisnika = ZahtevZaOdmor::select('ID','DatumOd','DatumDo', 'Odobreno')
+        // ->where("ZaposleniID",'=',$sIDKorisnika)
+        // ->get();
+
+        return back();
+        // return redirect()->view('zaposleni')->with(['korisnikID'=>$sKorisnikID, 'zahteviKorisnika'=>$aZahteviKorisnika]);
+        
     }
 
 }

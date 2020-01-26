@@ -13,4 +13,10 @@ class Korisnik extends Model
      * @var string
      */
     protected $table = 'Korisnik';
+
+    public function podaciOZaposlenom()
+    {
+        return $this->hasOne('App\PodaciOKorisniku','KorisnikID','ID');
+    }
+
 }

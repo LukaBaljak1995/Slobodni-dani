@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ZahtevZaOdmor extends Model
+class GodisnjiOdmor extends Model
 {
     //
      /**
@@ -12,14 +12,11 @@ class ZahtevZaOdmor extends Model
      *
      * @var string
      */
-    protected $table = 'ZahtevZaOdmor';
+    protected $table = 'GodisnjiOdmor';
     public $incrementing = true;
     protected $primaryKey = 'ID';
     public $timestamps = false;
 
     
-    public function zaposleni()
-    {
-        return $this->hasOne('App\Korisnik','ID','ZaposleniID');
-    }
+    
 }

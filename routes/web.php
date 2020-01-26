@@ -23,7 +23,11 @@ Route::post('/login', 'WelcomeController@login');
 
 Route::get('/zaposleni/{id}', 'ZaposleniController@view');
 
+Route::get('/admin/{id}', 'AdministratorController@view');
+
 Route::post('/zaposleniZahtevZaOdmorom', 'ZaposleniController@zahtevZaOdmorom');
+
+Route::get('/odobriGodisnjiOdmor/{id}', 'AdministratorController@odobriGodisnjiOdmor');
 
 // Route::get('zaposleni/{id}', function ($id) {
 //     return 'User '.$id;
