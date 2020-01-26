@@ -12,12 +12,11 @@
 */
 
 Route::get('/', function () {
-    // try {
-    //     DB::connection()->getPdo();
-    // } catch (\Exception $e) {
-    //     die("Could not connect to the database.  Please check your configuration. error:" . $e );
-    // }
-    // $res = DB::table('TipKorisnika')->select()->get();
-    // print_r($res);
+   
     return view('welcome');
 });
+
+
+// Route::get('login', 'WelcomeController@login');
+
+Route::post('/login', 'WelcomeController@login');
