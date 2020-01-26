@@ -4,8 +4,9 @@
         @include('head')
     </head>
     <body>
+    <div class="container ">
         <div class="row">
-            <div class="col-sm-3 col-sm-offset-3" style="margin:auto">
+            <div class="col-sm-3 " >
                 <form action="/SlobodniDani/laravel/zaposleniZahtevZaOdmorom" method="post">
                 {{ csrf_field() }}
                     <input type="text" name="korisnikID" id="" value = " {{ $korisnikID }} " hidden>
@@ -20,8 +21,31 @@
                     <button type="submit" class="btn btn-primary">Predaj zahtev</button>
                 </form>
             </div>
-        </div>
 
+            <div class="col-sm-6 offset-2" >
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Datum od</th>
+                        <th scope="col">Datum do</th>
+                        <th scope="col">Odobreno</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($zahteviKorisnika as $zahtevKorisnika)
+                            <tr>
+                                <th>{{ $zahtevKorisnika->ID }}</th>
+                                <th>{{ $zahtevKorisnika->DatumOd }}</th>
+                                <td>{{ $zahtevKorisnika->DatumDo }}</td>
+                                <td>{{ $zahtevKorisnika->Odobreno }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
         @include('scripts')
     </body>
 </html>

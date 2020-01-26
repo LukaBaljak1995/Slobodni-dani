@@ -12,7 +12,12 @@ class ZaposleniController extends Controller{
     function view(Request $request){
         // echo $request->route();
         // dd($request->route()->parameters()['id']);
-        return view('zaposleni')->with(['korisnikID'=>$request->route()->parameters()['id']]);
+        $sIDKorisnika = $request->route()->parameters()['id'];
+        $aZahteviKorisnika = ZahtevZaOdmor::select('ID','DatumOd','DatumDo', 'Odobreno')
+                                                ->where("ZaposleniID",'=',$sIDKorisnika)
+                                                ->get();
+
+        return view('zaposleni')->with(['korisnikID'=>$sIDKorisnika, 'zahteviKorisnika'=>$aZahteviKorisnika]);
     }
 
     function zahtevZaOdmorom(Request $request){
