@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TipUgovora extends Model
+class UlogaKorisnika extends Model
 {
     //
      /**

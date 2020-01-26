@@ -27,4 +27,8 @@ class PodaciOKorisniku extends Model
         return $this->hasMany('App\GodisnjiOdmor','ZaposleniID','ID')->orderBy('Godina','DESC');
     }
 
+    public function ulogaKorisnika(){
+        return $this->hasOne('App\UlogaKorisnika','ID','UlogaKorisnikaID');
+    }
+
 }
