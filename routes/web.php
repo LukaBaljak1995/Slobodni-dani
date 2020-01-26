@@ -20,3 +20,11 @@ Route::get('/', function () {
 // Route::get('login', 'WelcomeController@login');
 
 Route::post('/login', 'WelcomeController@login');
+
+Route::get('/zaposleni/{id}', 'ZaposleniController@view');
+
+Route::post('/zaposleniZahtevZaOdmorom', 'ZaposleniController@zahtevZaOdmorom');
+
+// Route::get('zaposleni/{id}', function ($id) {
+//     return 'User '.$id;
+// });
